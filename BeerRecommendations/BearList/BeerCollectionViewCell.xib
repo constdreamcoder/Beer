@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BeerCollectionViewCell" id="gTV-IL-0wX" customClass="BeerCollectionViewCell" customModule="BeerRecommendations" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="234" height="406"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="234" height="406"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="HTa-71-IFN">
+                        <rect key="frame" x="0.0" y="0.0" width="234" height="175.66666666666666"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="HTa-71-IFN" secondAttribute="height" multiplier="4:3" id="O2J-Fw-Ybl"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePU-my-1zZ">
+                        <rect key="frame" x="10" y="191.66666666666666" width="214" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tagline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-ly-xd3">
+                        <rect key="frame" x="10" y="224.66666666666666" width="214" height="14.333333333333343"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8Nh-ly-xd3" secondAttribute="bottom" constant="16" id="8zr-Wx-dpw"/>
+                <constraint firstItem="8Nh-ly-xd3" firstAttribute="top" secondItem="ePU-my-1zZ" secondAttribute="bottom" constant="16" id="9dR-63-LKb"/>
+                <constraint firstItem="HTa-71-IFN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HQs-Mf-BwD"/>
+                <constraint firstAttribute="trailing" secondItem="HTa-71-IFN" secondAttribute="trailing" id="NTM-3N-xBG"/>
+                <constraint firstAttribute="trailing" secondItem="ePU-my-1zZ" secondAttribute="trailing" constant="10" id="QNO-zb-dGg"/>
+                <constraint firstItem="HTa-71-IFN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="T4m-vE-gB4"/>
+                <constraint firstAttribute="trailing" secondItem="8Nh-ly-xd3" secondAttribute="trailing" constant="10" id="b3u-Rz-Ieo"/>
+                <constraint firstItem="8Nh-ly-xd3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="cnT-IS-ZNn"/>
+                <constraint firstItem="ePU-my-1zZ" firstAttribute="top" secondItem="HTa-71-IFN" secondAttribute="bottom" constant="16" id="hc9-oL-1hg"/>
+                <constraint firstItem="ePU-my-1zZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="s2S-dL-aRS"/>
+            </constraints>
+            <size key="customSize" width="234" height="406"/>
+            <connections>
+                <outlet property="beerImageView" destination="HTa-71-IFN" id="iF8-dR-dCC"/>
+                <outlet property="beerNameLabel" destination="ePU-my-1zZ" id="9sW-d0-0BW"/>
+                <outlet property="beerTaglineLabel" destination="8Nh-ly-xd3" id="pqa-OD-oIr"/>
+            </connections>
+            <point key="canvasLocation" x="279.38931297709922" y="144.36619718309859"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="no_image" width="1000" height="1000"/>
+    </resources>
+</document>
