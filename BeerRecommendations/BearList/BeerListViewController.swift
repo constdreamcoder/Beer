@@ -10,14 +10,25 @@ import Alamofire
 import Kingfisher
 
 class BeerListViewController: UIViewController {
-
+    
     @IBOutlet weak var beerListCollectionView: UICollectionView!
+
+    let manager = BeerAPIManager()
     
     var beerList: [Beer] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureCollectionView()
+        
+        manager.getRandomBeer { beerList in
+            self.beerList = beerList
+            self.beerListCollectionView.reloadData()
+        }
+    }
+    
+    func configureCollectionView() {
         beerListCollectionView.delegate = self
         beerListCollectionView.dataSource = self
         
@@ -28,32 +39,12 @@ class BeerListViewController: UIViewController {
         
         let layout = UICollectionViewFlowLayout()
         let itemSize = UIScreen.main.bounds.width - (spacing * 3)
-        layout.itemSize = CGSize(width: itemSize / 2, height: (itemSize / 2) * 1.5)
+        layout.itemSize = CGSize(width: itemSize / 2, height: (itemSize / 2) * 1.6)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = spacing
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: 0, right: spacing)
         
         beerListCollectionView.collectionViewLayout = layout
-        
-        getRandomBeer { beerList in
-            print()
-            self.beerList = beerList
-            self.beerListCollectionView.reloadData()
-        }
-    }
-    
-    func getRandomBeer(completionHandler: @escaping ([Beer]) -> Void) {
-        let url = "https://api.punkapi.com/v2/beers"
-        AF.request(url)
-            .validate(statusCode: 200..<300)
-            .responseDecodable(of: [Beer].self) { response in
-                switch response.result {
-                case .success(let success):
-                    completionHandler(success)
-                case .failure(let failure):
-                    print(failure.localizedDescription)
-                }
-            }
     }
 }
 
@@ -79,6 +70,4 @@ extension BeerListViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
 }

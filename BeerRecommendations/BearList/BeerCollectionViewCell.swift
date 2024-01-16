@@ -18,6 +18,6 @@ class BeerCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        layer.cornerRadius = 8
     }
-
 }

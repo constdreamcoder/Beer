@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,19 +18,19 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="HTa-71-IFN">
-                        <rect key="frame" x="0.0" y="0.0" width="234" height="175.66666666666666"/>
+                        <rect key="frame" x="0.0" y="16" width="234" height="175.66666666666666"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="HTa-71-IFN" secondAttribute="height" multiplier="4:3" id="O2J-Fw-Ybl"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePU-my-1zZ">
-                        <rect key="frame" x="10" y="191.66666666666666" width="214" height="17"/>
+                        <rect key="frame" x="10" y="207.66666666666666" width="214" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tagline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-ly-xd3">
-                        <rect key="frame" x="10" y="224.66666666666666" width="214" height="14.333333333333343"/>
+                        <rect key="frame" x="10" y="240.66666666666666" width="214" height="14.333333333333343"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,10 +38,11 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
             <constraints>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8Nh-ly-xd3" secondAttribute="bottom" constant="16" id="8zr-Wx-dpw"/>
                 <constraint firstItem="8Nh-ly-xd3" firstAttribute="top" secondItem="ePU-my-1zZ" secondAttribute="bottom" constant="16" id="9dR-63-LKb"/>
-                <constraint firstItem="HTa-71-IFN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HQs-Mf-BwD"/>
+                <constraint firstItem="HTa-71-IFN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="HQs-Mf-BwD"/>
                 <constraint firstAttribute="trailing" secondItem="HTa-71-IFN" secondAttribute="trailing" id="NTM-3N-xBG"/>
                 <constraint firstAttribute="trailing" secondItem="ePU-my-1zZ" secondAttribute="trailing" constant="10" id="QNO-zb-dGg"/>
                 <constraint firstItem="HTa-71-IFN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="T4m-vE-gB4"/>
@@ -60,5 +62,8 @@
     </objects>
     <resources>
         <image name="no_image" width="1000" height="1000"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
